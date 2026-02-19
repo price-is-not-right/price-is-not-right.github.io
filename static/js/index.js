@@ -75,4 +75,13 @@ $(document).ready(function() {
 
     bulmaSlider.attach();
 
+    var heroVideo = document.getElementById('E2E-VLA');
+    if (heroVideo) {
+      heroVideo.addEventListener('loadedmetadata', function() {
+        if (heroVideo.textTracks && heroVideo.textTracks[0]) {
+          heroVideo.textTracks[0].mode = 'showing';
+        }
+      });
+    }
+
 })
